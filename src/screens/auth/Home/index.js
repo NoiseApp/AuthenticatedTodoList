@@ -1,11 +1,17 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import {  Text } from 'react-native'
+import Button from "../../../components/common/Button";
+import Container from "../../../components/common/Container"
 
-const Home = () => {
+import authStyles from "../styles"
+
+const Home = ({navigation}) => {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <Container style={{alignItems: "center", justifyContent: "center", marginHorizontal: 16}}>
+      <Text style={authStyles.title}>HOME</Text>
+      <Text style={authStyles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+      <Button text={"Next"} onPress={() => navigation.navigate("Register")}/>
+    </Container>
   )
 }
 

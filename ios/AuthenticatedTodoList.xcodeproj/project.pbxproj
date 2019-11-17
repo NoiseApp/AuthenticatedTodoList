@@ -161,7 +161,6 @@
 				090052060CD1D4B8017F75F2 /* Pods-AuthenticatedTodoListTests.debug.xcconfig */,
 				A3F67862A0A6148009933D9F /* Pods-AuthenticatedTodoListTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

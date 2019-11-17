@@ -2,18 +2,11 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 const styles = EStyleSheet.create({
   container: {
-    position: 'absolute',
-    bottom: 25,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-    margin: 15
   },
   button: {
-    flexDirection: 'row',
     width: '$screenWidth * 0.8',
     height: 50,
-    backgroundColor: 'white',
+    backgroundColor: 'white', //para que se vea el shadow
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
@@ -29,8 +22,7 @@ const styles = EStyleSheet.create({
   text: {
     color: '$primaryDark',
     textTransform: 'uppercase',
-    fontSize: 18,
-    fontFamily: '$regular'
+    fontSize: 16,
   }
 });
 

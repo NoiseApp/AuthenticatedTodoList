@@ -1,7 +1,7 @@
 import {
-  createStackNavigator,
-  createAppContainer,
-} from 'react-navigation';
+  createStackNavigator
+} from 'react-navigation-stack';
+import {createAppContainer} from "react-navigation";
 import Home from "./auth/Home"
 import Register from "./auth/Register"
 import Verification from "./auth/Verification"
