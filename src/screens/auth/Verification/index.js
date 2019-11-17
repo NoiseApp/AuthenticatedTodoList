@@ -15,7 +15,7 @@ const Verification = ({navigation}) => {
         <Text style={authStyles.inputLabel}>Verification Code</Text>
       <Input placeholder={"Insert phone"} name="verification" onChange={() => null} onTouch={() => null} error={""}/>
       </View>
-      <Button text={"Next"} onPress={() => navigation.navigate("Register")}/>
+      <Button text={"Next"} onPress={() => navigation.navigate("Todos List")}/>
     </Container>
   )
 }

@@ -6,7 +6,7 @@ import Home from "./auth/Home"
 import Register from "./auth/Register"
 import Verification from "./auth/Verification"
 import TodosList from "./todos/TodosList"
-import AddTodo from "./todos/TodosList"
+import AddTodo from "./todos/AddTodo"
 
 const authStack = createStackNavigator(
   {
@@ -30,7 +30,9 @@ const todosStack = createStackNavigator({
   'Add Todo': {
     screen: AddTodo,
   },
-});
+},{header: {
+  style: { shadowColor: 'transparent', elevation: 0 },
+}});
 
 const MainNavigator = createStackNavigator(
   {

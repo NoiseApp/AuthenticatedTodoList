@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import styles from "./styles"
 
-const Button = ({ text, loading, ...rest }) => (
-    <TouchableOpacity style={styles.button} {...rest}>
+const Button = ({ text, loading, style, ...rest }) => (
+    <TouchableOpacity style={[styles.button, style]} {...rest}>
       {loading && <ActivityIndicator color="blue" size="small" style={{ marginRight: 10 }} />}
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>

@@ -19,10 +19,10 @@ const Input = ({
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <View style={styles.inputContainer}>
         <TextInput
-          style={[styles.input, style]}
+          style={styles.input}
           placeholder={placeholder}
           autoCapitalize="none"
           onChangeText={text => onChange(name, text)}
