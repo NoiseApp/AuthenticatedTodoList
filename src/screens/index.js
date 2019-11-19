@@ -1,52 +1,56 @@
-import {
-  createStackNavigator
-} from 'react-navigation-stack';
-import {createAppContainer} from "react-navigation";
-import Home from "./auth/Home"
-import Register from "./auth/Register"
-import Verification from "./auth/Verification"
-import TodosList from "./todos/TodosList"
-import AddTodo from "./todos/AddTodo"
+import {createStackNavigator} from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
+import Home from './auth/Home';
+import Register from './auth/Register';
+import Verification from './auth/Verification';
+import TodosList from './todos/TodosList';
+import AddTodo from './todos/AddTodo';
 
 const authStack = createStackNavigator(
   {
     Home: {
-      screen: Home
+      screen: Home,
     },
     Register: {
-      screen: Register
+      screen: Register,
     },
     Verification: {
-      screen: Verification
-    }
+      screen: Verification,
+    },
   },
-  { headerMode: 'none' }
+  {headerMode: 'none'},
 );
 
-const todosStack = createStackNavigator({
-  "Todos List": {
-    screen: TodosList,
+const todosStack = createStackNavigator(
+  {
+    'Todos List': {
+      screen: TodosList,
+    },
+    'Add Todo': {
+      screen: AddTodo,
+    },
   },
-  'Add Todo': {
-    screen: AddTodo,
+  {
+    headerStyle: {
+      elevation: 0,
+      shadowOpacity: 0,
+      borderBottomWidth: 0,
+    },
   },
-},{header: {
-  style: { shadowColor: 'transparent', elevation: 0 },
-}});
+);
 
 const MainNavigator = createStackNavigator(
   {
     Home: {
-      screen: authStack
+      screen: authStack,
     },
     Flow: {
-      screen: todosStack
-    }
+      screen: todosStack,
+    },
   },
   {
-    headerMode: 'none'
-  }
+    headerMode: 'none',
+  },
 );
-
 
 export default createAppContainer(MainNavigator);

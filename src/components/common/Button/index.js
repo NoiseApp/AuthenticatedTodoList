@@ -1,14 +1,16 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, ActivityIndicator } from 'react-native';
+import {TouchableOpacity, Text, View, ActivityIndicator} from 'react-native';
 import PropTypes from 'prop-types';
 
-import styles from "./styles"
+import styles from './styles';
 
-const Button = ({ text, loading, style, ...rest }) => (
-    <TouchableOpacity style={[styles.button, style]} {...rest}>
-      {loading && <ActivityIndicator color="blue" size="small" style={{ marginRight: 10 }} />}
-      <Text style={styles.text}>{text}</Text>
-    </TouchableOpacity>
+const Button = ({text, loading, style, ...rest}) => (
+  <TouchableOpacity style={[styles.button, style]} {...rest}>
+    {loading && (
+      <ActivityIndicator color="blue" size="small" style={{marginRight: 10}} />
+    )}
+    <Text style={styles.text}>{text}</Text>
+  </TouchableOpacity>
 );
 
 Button.propTypes = {
@@ -16,7 +18,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  text: 'Default Button'
+  text: 'Default Button',
 };
 
 export default Button;
+

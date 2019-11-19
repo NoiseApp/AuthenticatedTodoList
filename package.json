@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-native-community/cli-platform-ios": "^3.0.0",
+    "eslint-config-rallycoding": "^3.2.0",
     "formik": "^2.0.4",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
