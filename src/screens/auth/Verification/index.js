@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text} from 'react-native';
+
 import Button from '../../../components/common/Button';
 import Container from '../../../components/common/Container';
 import Input from '../../../components/common/Input';
@@ -7,6 +8,18 @@ import Input from '../../../components/common/Input';
 import authStyles from '../styles';
 
 const Verification = ({navigation}) => {
+  const [verificationCode, setVerificationCode] = useState("");
+  const [error, setError] = useState("")
+  
+  const onNextPress = () => {
+    navigation.state.params.confirmResult.confirm(verificationCode)
+    .then(user => {
+      console.log(user);
+      navigation.navigate('Todos List')
+    })
+    .catch(error => setError(error))
+  }
+
   return (
     <Container
       style={{
@@ -24,14 +37,15 @@ const Verification = ({navigation}) => {
       <View>
         <Text style={authStyles.inputLabel}>Verification Code</Text>
         <Input
+          value={verificationCode}
           placeholder={'Insert phone'}
           name="verification"
-          onChange={() => null}
+          onChange={(name,newCode) => setVerificationCode(newCode)}
           onTouch={() => null}
-          error={''}
+          error={error}
         />
       </View>
-      <Button text={'Next'} onPress={() => navigation.navigate('Todos List')} />
+      <Button text={'Next'} onPress={onNextPress} />
     </Container>
   );
 };

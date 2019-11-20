@@ -1,6 +1,6 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
-import { Provider } from 'react-redux';
+import {Dimensions} from 'react-native';
+import {Provider} from 'react-redux';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import store from './redux/store';
@@ -14,11 +14,10 @@ EStyleSheet.build({
   $screenHeight: Dimensions.get('window').height,
 });
 
-const App = () =>
-    (
-      <Provider store={store}>
-        <Navigator />
-      </Provider>
-    );
- 
+const App = () => (
+  <Provider store={store}>
+    <Navigator />
+  </Provider>
+);
+
 export default App;
