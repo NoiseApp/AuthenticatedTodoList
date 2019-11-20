@@ -9,7 +9,7 @@ import Input from '../../../components/common/Input';
 import Button from '../../../components/common/Button';
 import TodoCard from '../../../components/common/TodoCard';
 
-const TodosList = ({navigation, todosList, editTodo}) => {
+const TodosList = ({navigation, todosList, editTodo, removeTodo}) => {
   const [filterValue, setFilterValue] = useState('');
   const filterTodos = todosList.filter(todo =>
     todo.title.toLowerCase().includes(filterValue.toLowerCase()),
@@ -38,6 +38,7 @@ const TodosList = ({navigation, todosList, editTodo}) => {
               checked={item.status}
               title={item.title}
               onValueChange={newValue => onChangeTodoStatus(item, newValue)}
+              onDeleteTodo={removeTodo}
             />
           );
         }}

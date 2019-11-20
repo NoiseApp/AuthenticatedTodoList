@@ -1,15 +1,14 @@
 import React from 'react';
-import {View, Text, CheckBox} from 'react-native';
+import {CheckBox} from 'react-native-elements';
 
-const TodoCard = ({title, checked, onValueChange}) => {
+const TodoCard = ({title, checked, onValueChange, onDeleteTodo}) => {
   return (
-    <View>
-      <CheckBox
-        value={checked}
-        onValueChange={newValue => onValueChange(newValue)}
-      />
-      <Text>{title}</Text>
-    </View>
+    <CheckBox
+      title={title}
+      checked={checked}
+      onPress={() => onValueChange(!checked)}
+      onLongPress={() => onDeleteTodo({title})}
+    />
   );
 };
 

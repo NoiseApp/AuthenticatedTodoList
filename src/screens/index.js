@@ -21,23 +21,20 @@ const authStack = createStackNavigator(
   {headerMode: 'none'},
 );
 
-const todosStack = createStackNavigator(
-  {
-    'Todos List': {
-      screen: TodosList,
-    },
-    'Add Todo': {
-      screen: AddTodo,
+const todosStack = createStackNavigator({
+  'Todos List': {
+    screen: TodosList,
+    navigationOptions: {
+      headerStyle: {elevation: 0, borderBottomWidth: 0},
     },
   },
-  {
-    headerStyle: {
-      elevation: 0,
-      shadowOpacity: 0,
-      borderBottomWidth: 0,
+  'Add Todo': {
+    screen: AddTodo,
+    navigationOptions: {
+      headerStyle: {elevation: 0, borderBottomWidth: 0},
     },
   },
-);
+});
 
 const MainNavigator = createStackNavigator(
   {
@@ -50,6 +47,9 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
+    defaultNavigationOptions: {
+      gesturesEnabled: false,
+    },
   },
 );
 
